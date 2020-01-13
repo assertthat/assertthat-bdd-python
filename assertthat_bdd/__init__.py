@@ -1,0 +1,1 @@
+from assertthat_bdd.jira_integration import JiraConnector

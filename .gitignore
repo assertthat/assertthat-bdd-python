@@ -1,0 +1,15 @@
+.idea**
+*.iml
+.pytest_cache
+**__pycache__**
+reports/
+rerun.txt
+venv*
+reports/
+features/
+download_steps*
+reconnect*
+dist/*
+dist/
+Makefile
+MANIFEST
