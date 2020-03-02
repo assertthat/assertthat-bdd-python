@@ -23,7 +23,7 @@ class JiraConnector:
             else:
                 secret_key = os.environ.get("ASSERTTHAT_SECRET_KEY")
 
-        path = 'https://bdd.assertthat.com/rest/api/1/project/' + project_id + '/features'
+        path = 'https://bdd.assertthat.app/rest/api/1/project/' + project_id + '/features'
         headers = {}
         payload = {'mode': mode,
                    'jql': jql
@@ -70,7 +70,7 @@ class JiraConnector:
                       json_report_folder='./reports/', json_report_include_pattern='\.json$', type='cucumber',
                       proxy_uri=None, proxy_username=None, proxy_password=None):
 
-        path = 'https://bdd.assertthat.com/rest/api/1/project/' + project_id + '/report'
+        path = 'https://bdd.assertthat.app/rest/api/1/project/' + project_id + '/report'
 
         if proxy_uri is None:
             proxies = None
