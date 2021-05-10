@@ -28,6 +28,8 @@ JiraConnector.download_features(
     secret_key='ASSERTTHAT_SECRET_KEY',
     # Optional - default ./features
     output_folder='./features',
+    #Required for Jira Server only. Omit if using Jira Cloud version
+    jira_server_url: 'https://mycompanyjira.com'
     # Optional - all features downloaded by default - should be a valid JQL
     # jql = 'project = XX AND key in ('XXX-1')',
     # Optional - default automated (can be one of: manual/automated/both)
@@ -50,6 +52,8 @@ JiraConnector.upload_report(
     secret_key='ASSERTTHAT_SECRET_KEY',
     # The name of the run - default 'Test run dd MMM yyyy HH:mm:ss'
     run_name= 'Dry Tests Run',
+    #Required for Jira Server only. Omit if using Jira Cloud version
+    jira_server_url: 'https://mycompanyjira.com'
     # Json report folder - default ./reports
     json_report_folder='./reports',
     # Regex to search for cucumber reports - default "\.json$"

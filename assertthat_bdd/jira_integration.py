@@ -8,7 +8,7 @@ import re
 
 class JiraConnector:
 
-    def download_features(project_id, access_key=None, secret_key=None, output_folder='./features/', jql=None, mode='automated',
+    def download_features(project_id, access_key=None, secret_key=None, output_folder='./features/', jql=None, mode='automated', jira_server_url=None,
                           proxy_uri=None, proxy_username=None, proxy_password=None):
 
         if access_key is None:
@@ -23,7 +23,10 @@ class JiraConnector:
             else:
                 secret_key = os.environ.get("ASSERTTHAT_SECRET_KEY")
 
-        path = 'https://bdd.assertthat.app/rest/api/1/project/' + project_id + '/features'
+        if jira_server_url is None:
+            path = 'https://bdd.assertthat.app/rest/api/1/project/' + project_id + '/features'
+        else:
+            path = jira_server_url+"/rest/assertthat/latest/project/" + project_id + "/client/features"
         headers = {}
         payload = {'mode': mode,
                    'jql': jql
@@ -67,10 +70,13 @@ class JiraConnector:
 
     def upload_report(project_id, access_key, secret_key,
                       run_name='Test run ' + datetime.datetime.now().strftime("%d %b %Y %H:%M:%S"),
-                      json_report_folder='./reports/', json_report_include_pattern='\.json$', type='cucumber',
+                      json_report_folder='./reports/', json_report_include_pattern='\.json$', type='cucumber', jira_server_url=None,
                       proxy_uri=None, proxy_username=None, proxy_password=None):
 
-        path = 'https://bdd.assertthat.app/rest/api/1/project/' + project_id + '/report'
+        if jira_server_url is None:
+            path = 'https://bdd.assertthat.app/rest/api/1/project/' + project_id + '/report'
+        else:
+            path = jira_server_url + "/rest/assertthat/latest/project/" + project_id + "/client/report"
 
         if proxy_uri is None:
             proxies = None
