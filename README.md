@@ -34,6 +34,8 @@ JiraConnector.download_features(
     # jql = 'project = XX AND key in ('XXX-1')',
     # Optional - default automated (can be one of: manual/automated/both)
     mode='both',
+    #Optional - tag expression filter for scenarios. More on tag expressions https://cucumber.io/docs/cucumber/api/#tag-expressions
+    tags: '(@smoke or @ui) and (not @slow)',
     # Optional - Detail the proxy with the specific scheme e.g.'10.10.10.10:1010'
     # proxy_uri='proxyip:port',
     proxy_uri= 'proxy_uri',

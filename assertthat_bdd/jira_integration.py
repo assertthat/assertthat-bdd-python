@@ -8,7 +8,7 @@ import re
 
 class JiraConnector:
 
-    def download_features(project_id, access_key=None, secret_key=None, output_folder='./features/', jql=None, mode='automated', jira_server_url=None,
+    def download_features(project_id, access_key=None, secret_key=None, jira_server_url=None, output_folder='./features/', jql=None, mode='automated', tags=None,
                           proxy_uri=None, proxy_username=None, proxy_password=None):
 
         if access_key is None:
@@ -29,7 +29,8 @@ class JiraConnector:
             path = jira_server_url+"/rest/assertthat/latest/project/" + project_id + "/client/features"
         headers = {}
         payload = {'mode': mode,
-                   'jql': jql
+                   'jql': jql,
+                   'tags': tags
                    }
         print('Fetching from: ' + path)
 
@@ -68,9 +69,9 @@ class JiraConnector:
         except requests.exceptions.RequestException as err:
             print("[ERROR] Failed to download features", err)
 
-    def upload_report(project_id, access_key, secret_key,
+    def upload_report(project_id, access_key, secret_key, jira_server_url=None,
                       run_name='Test run ' + datetime.datetime.now().strftime("%d %b %Y %H:%M:%S"),
-                      json_report_folder='./reports/', json_report_include_pattern='\.json$', type='cucumber', jira_server_url=None,
+                      json_report_folder='./reports/', json_report_include_pattern='\.json$', type='cucumber',
                       proxy_uri=None, proxy_username=None, proxy_password=None):
 
         if jira_server_url is None:
