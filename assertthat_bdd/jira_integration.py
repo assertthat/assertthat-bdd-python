@@ -13,7 +13,7 @@ class JiraConnector:
 
         # Use environment variable for token if not provided
         if token is None:
-            token = os.environ.get("JIRA_PERSONAL_ACCESS_TOKEN")
+            token = os.environ.get("ASSERTTHAT_TOKEN")
 
         # Check for conflicting authentication methods
         if token and (access_key or secret_key):
@@ -94,7 +94,7 @@ class JiraConnector:
 
         # Use environment variable for token if not provided
         if token is None:
-            token = os.environ.get("JIRA_PERSONAL_ACCESS_TOKEN")
+            token = os.environ.get("ASSERTTHAT_TOKEN")
 
         # Check for conflicting authentication methods
         if token and (access_key or secret_key):
