@@ -26,6 +26,8 @@ JiraConnector.download_features(
     access_key='ASSERTTHAT_ACCESS_KEY',
     # Optional can be supplied as environment variable ASSERTTHAT_SECRET_KEY
     secret_key='ASSERTTHAT_SECRET_KEY',
+    # Optional can be supplied as environment variable JIRA_PERSONAL_ACCESS_TOKEN
+    token='JIRA_PERSONAL_ACCESS_TOKEN',
     # Optional - default ./features
     output_folder='./features',
     #Required for Jira Server only. Omit if using Jira Cloud version
@@ -52,6 +54,8 @@ JiraConnector.upload_report(
     access_key='ASSERTTHAT_ACCESS_KEY',
     # Optional can be supplied as environment variable ASSERTTHAT_SECRET_KEY
     secret_key='ASSERTTHAT_SECRET_KEY',
+    # Optional can be supplied as environment variable JIRA_PERSONAL_ACCESS_TOKEN
+    token='JIRA_PERSONAL_ACCESS_TOKEN',
     # The name of the run - default 'Test run dd MMM yyyy HH:mm:ss'
     run_name= 'Dry Tests Run',
     #Required for Jira Server only. Omit if using Jira Cloud version
