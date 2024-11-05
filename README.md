@@ -4,7 +4,7 @@ Python plugin for interaction with [AssertThat BDD Jira plugin](https://marketpl
 # Main features are:
 
 Download feature files before test run
-Filter features to download based on mode (automated/manual/both), or/and JQL
+Filter features to download based on mode (automated/manual/tags/both), or/and JQL
 Upload cucumber json after the run to AsserTthat Jira plugin
 
 # Installation
