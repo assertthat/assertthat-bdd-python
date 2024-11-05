@@ -84,4 +84,4 @@ We recommend running cucumber tests on integration-test phase as
 - report submission on post-integration-test
 
 # Example project
-Refer to example project - https://github.com/assertthat/assertthat-behave-example
+Refer to example project - [https://github.com/assertthat/assertthat-behave-example](https://github.com/assertthat/assertthat-bdd-python-example)
