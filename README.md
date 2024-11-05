@@ -14,7 +14,7 @@ To add the library to your project:
 
 Full plugin configuration below, optional properties can be omitted.  
 
-Either use access_key/sectret_key OR token authentication:
+Either use access_key/secret_key OR token authentication:
 - project_id, access_key secret_key can be found from the  [asserthat configuration page](https://assertthat.atlassian.net/wiki/spaces/ABTM/pages/2328264705/AssertThat+Configuration+Enable+for+project)
 - Personal Access token can be generated on [Data Center](https://confluence.atlassian.com/enterprise/using-personal-access-tokens-1026032365.html) or [Cloud](https://id.atlassian.com/manage-profile/security/api-tokens).  project_id details can be found here [asserthat configuration page](https://assertthat.atlassian.net/wiki/spaces/ABTM/pages/2328264705/AssertThat+Configuration+Enable+for+project)
 
